@@ -31,7 +31,6 @@ to setup
   set money-spent hospital-capacity * 1000 ; initialize the total amount of money spent to 0
   ask n-of initial-infected-persons people [become-infected] ; n initial person are being infected (the number initial-infected-persons is defined in the interface)
   ask links [set color white] ; set the color of the links to white
-
 end
 
 ; define the procedure to setup the people
@@ -50,7 +49,7 @@ end
 
 ; define the procedure to setup the network, create random links between people
 to setup-network
-  set num-links ceiling((number-of-encounters * ((100 - quarantine-strictness) / 100) * number-of-people)) ; the number of links to create depends on the parameters number-of-encounters, quarantine-strictness and number-of-people
+  set num-links ceiling((number-of-encounters * (1 - quarantine-strictness / 100) * number-of-people)) ; the number of links to create depends on the parameters number-of-encounters, quarantine-strictness and number-of-people
   repeat num-links [ ; for each num-links create a link 2 people
     ask one-of people with [not treated?] [
       create-link-with one-of other people with [not treated?]
@@ -297,7 +296,7 @@ number-of-people
 number-of-people
 10
 1000
-850.0
+795.0
 5
 1
 NIL
@@ -370,7 +369,7 @@ hospital-capacity
 hospital-capacity
 0
 100
-0.0
+28.0
 1
 1
 %
@@ -385,7 +384,7 @@ quarantine-strictness
 quarantine-strictness
 0
 100
-80.0
+42.0
 1
 1
 %
