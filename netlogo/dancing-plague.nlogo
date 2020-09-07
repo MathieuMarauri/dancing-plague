@@ -29,7 +29,7 @@ to setup
   ;set num-links (number-of-encounters * number-of-people)
   setup-people ; call the setup-people procedure
   set money-spent hospital-capacity * 1000 ; initialize the total amount of money spent to 0
-  ask n-of initial-infected-persons people [become-infected] ; n initial person are being infected (the number initial-infected-persons is defined in the interface)
+  ask n-of initially-infected-people people [become-infected] ; n initial person are being infected (the number initially-infected-people is defined in the interface)
   ask links [set color white] ; set the color of the links to white
 end
 
@@ -49,7 +49,7 @@ end
 
 ; define the procedure to setup the network, create random links between people
 to setup-network
-  set num-links ceiling((number-of-encounters * (1 - quarantine-strictness / 100) * number-of-people)) ; the number of links to create depends on the parameters number-of-encounters, quarantine-strictness and number-of-people
+  set num-links ceiling((number-of-encounters * (1 - lockdown-strictness / 100) * number-of-people)) ; the number of links to create depends on the parameters number-of-encounters, lockdown-strictness and number-of-people
   repeat num-links [ ; for each num-links create a link 2 people
     ask one-of people with [not treated?] [
       create-link-with one-of other people with [not treated?]
@@ -65,8 +65,8 @@ to go
   evolve-virus ; call the procedure to spread the virus, declare symptoms
   treat-people ; call the procedure to treat people
   kill-people ; call the procedure to kill people
-  ;set money-spent money-spent + quarantine-strictness * 50
-  set money-spent money-spent + quarantine-strictness * quarantine-strictness
+  ;set money-spent money-spent + lockdown-strictness * 50
+  set money-spent money-spent + lockdown-strictness * lockdown-strictness
   tick ; advance of one tick
 end
 
@@ -76,7 +76,7 @@ to evolve-virus
   [
     ask link-neighbors
     [
-      if random-float 1 < transimission-rate [become-infected]
+      if random-float 1 < transmission-rate [become-infected]
     ]
   ]
   ask people with [infected?]
@@ -220,8 +220,8 @@ SLIDER
 978
 317
 1011
-transimission-rate
-transimission-rate
+transmission-rate
+transmission-rate
 0.0
 1
 0.15
@@ -296,7 +296,7 @@ number-of-people
 number-of-people
 10
 1000
-795.0
+800.0
 5
 1
 NIL
@@ -307,8 +307,8 @@ SLIDER
 899
 317
 932
-initial-infected-persons
-initial-infected-persons
+initially-infected-people
+initially-infected-people
 1
 20
 10.0
@@ -380,8 +380,8 @@ SLIDER
 557
 316
 590
-quarantine-strictness
-quarantine-strictness
+lockdown-strictness
+lockdown-strictness
 0
 100
 42.0
