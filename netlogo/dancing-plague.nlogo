@@ -174,13 +174,13 @@ to become-dead
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-413
-55
-1052
-695
+1319
+65
+1953
+700
 -1
 -1
-15.4
+15.27
 1
 10
 1
@@ -201,10 +201,10 @@ ticks
 30.0
 
 SLIDER
-66
-1018
-314
-1051
+2281
+424
+2529
+457
 fatality-rate-infected
 fatality-rate-infected
 0.0
@@ -216,10 +216,10 @@ fatality-rate-infected
 HORIZONTAL
 
 SLIDER
-68
-978
-317
-1011
+2283
+384
+2532
+417
 transmission-rate
 transmission-rate
 0.0
@@ -231,10 +231,10 @@ NIL
 HORIZONTAL
 
 BUTTON
-101
-345
-272
-417
+142
+868
+277
+940
 Setup simulation
 setup
 NIL
@@ -248,10 +248,10 @@ NIL
 1
 
 BUTTON
-101
-430
-182
-499
+304
+868
+428
+937
 RUN
 go
 T
@@ -265,10 +265,10 @@ NIL
 0
 
 PLOT
-1140
-287
-1605
-635
+1317
+721
+1981
+1137
 Population Status
 Number of days
 % of population
@@ -288,10 +288,10 @@ PENS
 "treated" 1.0 0 -1184463 true "" "plot (count people with [treated?]) / (count turtles) * 100"
 
 SLIDER
-70
-829
-317
-862
+2281
+533
+2528
+566
 number-of-people
 number-of-people
 10
@@ -303,10 +303,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-70
-899
-317
-932
+2281
+603
+2528
+636
 initially-infected-people
 initially-infected-people
 1
@@ -318,10 +318,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-70
-864
-317
-897
+2281
+568
+2528
+601
 number-of-encounters
 number-of-encounters
 1
@@ -333,10 +333,10 @@ NIL
 HORIZONTAL
 
 BUTTON
-190
-430
-271
-499
+469
+869
+596
+938
 Step
 go
 NIL
@@ -350,81 +350,81 @@ NIL
 1
 
 MONITOR
-1232
-165
-1325
-246
+593
+1013
+854
+1134
 Dead %
 (count people with [dead?]) / (count turtles) * 100
 0
 1
-20
+30
 
 SLIDER
-67
-602
-315
-635
+406
+794
+654
+827
 hospital-capacity
 hospital-capacity
 0
 100
-28.0
+2.0
 1
 1
 %
 HORIZONTAL
 
 SLIDER
-67
-557
-316
-590
+408
+727
+657
+760
 lockdown-strictness
 lockdown-strictness
 0
 100
-42.0
+53.0
 1
 1
 %
 HORIZONTAL
 
 TEXTBOX
-1070
-60
-1700
-90
+1325
+16
+1846
+54
 Susceptible (Blue), Infected without symptoms (Orange), Infected with symptoms (Red), Being treated (Pink), Recovered (Green), Dead (Grey)
-12
+15
 14.0
 1
 
 TEXTBOX
-38
-50
-368
-112
+307
+47
+778
+131
 Dansing plague of 1518
-25
+40
 123.0
 1
 
 TEXTBOX
-40
-100
-378
-340
-How can we deal with the dancing plague? Modify the lockdonw and the hospital capacity parameters and see how things will evolve.\n\nLockdown: how strictly the lockdown will be applied? This will reduce the number of encounters between people and thus the spread of the dancing plague. It also has a cost, each day, one point of percentage costs 50.\n\nHospital capacity: define the number of beds available to treat patients. One point of percentage costs 1000.\n\n\n
-13
+59
+382
+851
+632
+How can we deal with the dancing plague? Modify the lockdonw and the hospital capacity parameters and see how things will evolve.\n\nLockdown: how strictly the lockdown will be applied? This will reduce the number of encounters between people and thus the spread of the dancing plague. It also has a cost, each day, one point of percentage costs itself to the power of 2 (10% lockdown costs 100, 20% costs 400 ...).\n\nHospital capacity: define the number of beds available to treat patients. One point of percentage costs 1000.
+20
 0.0
 1
 
 SLIDER
-66
-1061
-314
-1094
+2281
+467
+2529
+500
 fatality-rate-treated
 fatality-rate-treated
 0
@@ -436,15 +436,55 @@ fatality-rate-treated
 HORIZONTAL
 
 MONITOR
-1364
-165
-1516
-246
+234
+1009
+461
+1130
 Money spent
 money-spent
 17
 1
+30
+
+TEXTBOX
+63
+673
+234
+745
+Parameters
+30
+0.0
+1
+
+TEXTBOX
+59
+137
+209
+173
+True story
+30
+0.0
+1
+
+TEXTBOX
+60
+201
+870
+327
+In July 1518, in the city of Strasbourg, a woman started to dance fervently. Soon several other person did the same thing. Somewhere between 50 and 400 people were \"infected\". 
 20
+0.0
+1
+
+TEXTBOX
+58
+323
+300
+373
+Your mission
+30
+0.0
+1
 
 @#$#@#$#@
 ## Objectif : 
