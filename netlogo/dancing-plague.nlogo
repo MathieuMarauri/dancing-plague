@@ -201,10 +201,10 @@ ticks
 30.0
 
 SLIDER
-2281
-424
-2529
-457
+2173
+937
+2421
+970
 fatality-rate-infected
 fatality-rate-infected
 0.0
@@ -216,10 +216,10 @@ fatality-rate-infected
 HORIZONTAL
 
 SLIDER
-2283
-384
-2532
-417
+2174
+811
+2423
+844
 transmission-rate
 transmission-rate
 0.0
@@ -231,10 +231,10 @@ NIL
 HORIZONTAL
 
 BUTTON
-142
-868
-277
-940
+285
+871
+420
+943
 Setup simulation
 setup
 NIL
@@ -248,10 +248,10 @@ NIL
 1
 
 BUTTON
-304
-868
-428
-937
+453
+871
+588
+944
 RUN
 go
 T
@@ -288,10 +288,10 @@ PENS
 "treated" 1.0 0 -1184463 true "" "plot (count people with [treated?]) / (count turtles) * 100"
 
 SLIDER
-2281
-533
-2528
-566
+2173
+1003
+2420
+1036
 number-of-people
 number-of-people
 10
@@ -303,10 +303,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-2281
-603
-2528
-636
+2173
+1132
+2420
+1165
 initially-infected-people
 initially-infected-people
 1
@@ -318,10 +318,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-2281
-568
-2528
-601
+2173
+1067
+2420
+1100
 number-of-encounters
 number-of-encounters
 1
@@ -333,10 +333,10 @@ NIL
 HORIZONTAL
 
 BUTTON
-469
-869
-596
-938
+618
+870
+753
+945
 Step
 go
 NIL
@@ -350,21 +350,21 @@ NIL
 1
 
 MONITOR
-593
-1013
-854
-1134
-Dead %
+539
+1010
+800
+1131
+Dead (%)
 (count people with [dead?]) / (count turtles) * 100
 0
 1
 30
 
 SLIDER
-406
-794
-654
-827
+283
+799
+531
+832
 hospital-capacity
 hospital-capacity
 0
@@ -376,10 +376,10 @@ hospital-capacity
 HORIZONTAL
 
 SLIDER
-408
-727
-657
-760
+284
+738
+533
+771
 lockdown-strictness
 lockdown-strictness
 0
@@ -421,10 +421,10 @@ How can we deal with the dancing plague? Modify the lockdonw and the hospital ca
 1
 
 SLIDER
-2281
-467
-2529
-500
+2173
+871
+2421
+904
 fatality-rate-treated
 fatality-rate-treated
 0
@@ -438,9 +438,9 @@ HORIZONTAL
 MONITOR
 234
 1009
-461
+516
 1130
-Money spent
+Money spent (€)
 money-spent
 17
 1
@@ -483,6 +483,36 @@ TEXTBOX
 373
 Your mission
 30
+0.0
+1
+
+TEXTBOX
+157
+742
+307
+767
+Lockdown: 
+20
+0.0
+1
+
+TEXTBOX
+157
+806
+307
+831
+Capacity:
+20
+0.0
+1
+
+TEXTBOX
+2126
+773
+2520
+813
+Other parameters defining the model
+20
 0.0
 1
 
