@@ -51,7 +51,7 @@ end
 to setup-network
   set num-links ceiling((number-of-encounters * (1 - lockdown-strictness / 100) * number-of-people)) ; the number of links to create depends on the parameters number-of-encounters, lockdown-strictness and number-of-people
   repeat num-links [ ; for each num-links create a link 2 people
-    ask one-of people with [not treated?] [
+    ask one-of people with [not treated? and not dead?] [
       create-link-with one-of other people with [not treated?]
     ]
   ]
@@ -160,7 +160,7 @@ to become-recovered
   set recovered? true
   set dead? false
   set color green
-  ask my-links [set color gray - 2]
+  ;ask my-links [set color gray - 2]
 end
 
 to become-dead
@@ -170,14 +170,14 @@ to become-dead
   set treated? false
   set recovered? false
   set dead? true
-  set color gray
+  set color yellow
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-1319
-65
-1953
-700
+1172
+305
+1806
+940
 -1
 -1
 15.27
@@ -201,10 +201,10 @@ ticks
 30.0
 
 SLIDER
-2173
-937
-2421
-970
+2065
+564
+2313
+597
 fatality-rate-infected
 fatality-rate-infected
 0.0
@@ -216,10 +216,10 @@ fatality-rate-infected
 HORIZONTAL
 
 SLIDER
-2174
-811
-2423
-844
+2066
+438
+2315
+471
 transmission-rate
 transmission-rate
 0.0
@@ -264,34 +264,11 @@ NIL
 NIL
 0
 
-PLOT
-1317
-721
-1981
-1137
-Population Status
-Number of days
-% of population
-0.0
-52.0
-0.0
-100.0
-true
-true
-"" ""
-PENS
-"susceptible" 1.0 0 -13345367 true "" "plot (count turtles with [susceptible?]) / (count turtles) * 100"
-"infected" 1.0 0 -2674135 true "" "plot (count turtles with [infected?] + count turtles with [treated?]) / (count turtles) * 100"
-"recovered" 1.0 0 -15040220 true "" "plot (count turtles with [recovered?]) / (count turtles) * 100"
-"hospital-capacity" 1.0 2 -10141563 true "" "plot(hospital-capacity)"
-"dead" 1.0 0 -9276814 true "" "plot (count turtles with [dead?]) / (count turtles) * 100"
-"treated" 1.0 0 -1184463 true "" "plot (count people with [treated?]) / (count turtles) * 100"
-
 SLIDER
-2173
-1003
-2420
-1036
+2065
+630
+2312
+663
 number-of-people
 number-of-people
 10
@@ -303,10 +280,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-2173
-1132
-2420
-1165
+2065
+759
+2312
+792
 initially-infected-people
 initially-infected-people
 1
@@ -318,10 +295,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-2173
-1067
-2420
-1100
+2065
+694
+2312
+727
 number-of-encounters
 number-of-encounters
 1
@@ -352,9 +329,9 @@ NIL
 MONITOR
 539
 1010
-800
+878
 1131
-Dead (%)
+Forever dancing (%)
 (count people with [dead?]) / (count turtles) * 100
 0
 1
@@ -369,7 +346,7 @@ hospital-capacity
 hospital-capacity
 0
 100
-2.0
+20.0
 1
 1
 %
@@ -384,18 +361,18 @@ lockdown-strictness
 lockdown-strictness
 0
 100
-53.0
+9.0
 1
 1
 %
 HORIZONTAL
 
 TEXTBOX
-1325
-16
-1846
-54
-Susceptible (Blue), Infected without symptoms (Orange), Infected with symptoms (Red), Being treated (Pink), Recovered (Green), Dead (Grey)
+1178
+251
+1784
+308
+Susceptible (Blue), Infected without symptoms (Orange), Infected with symptoms (Red), Being treated (Pink), Recovered (Green), Forever dancing (Yellow)
 15
 14.0
 1
@@ -405,7 +382,7 @@ TEXTBOX
 47
 778
 131
-Dansing plague of 1518
+Dancing plague of 1518
 40
 123.0
 1
@@ -421,15 +398,15 @@ How can we deal with the dancing plague? Modify the lockdonw and the hospital ca
 1
 
 SLIDER
-2173
-871
-2421
-904
+2065
+498
+2313
+531
 fatality-rate-treated
 fatality-rate-treated
 0
 10
-3.0
+2.0
 1
 1
 %
@@ -442,7 +419,7 @@ MONITOR
 1130
 Money spent (€)
 money-spent
-17
+0
 1
 30
 
@@ -507,10 +484,10 @@ Capacity:
 1
 
 TEXTBOX
-2126
-773
-2520
-813
+2018
+400
+2412
+440
 Other parameters defining the model
 20
 0.0

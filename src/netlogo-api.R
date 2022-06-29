@@ -1,5 +1,5 @@
 
-# Run NetLogo simulation from R - Examples using nlrx and RNetlogo
+# Run NetLogo simulation from R
 
 # Set-up ---------------------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ nl@experiment <- experiment(
   idsetup = "setup",
   idgo = "go",
   stopcond = "all? turtles [not infected? and not infected-sym?]",
-  # runtime = 50,
+  runtime = 50,
   evalticks = seq(40, 50),
   metrics = c("count people with [dead?] / count people", "money-spent"),
   variables = list(
@@ -54,7 +54,7 @@ nl@simdesign <- simdesign_ff(
 )
 
 # Run the simulations
-# results <- run_nl_one(nl, seed = 3, siminputrow = 1)
+results <- run_nl_one(nl, seed = 3, siminputrow = 100)
 results <- run_nl_all(nl)
 
 # Save the results
@@ -68,3 +68,5 @@ write_simoutput(nl)
 
 # Do further analysis:
 a <- analyze_nl(nl)
+
+

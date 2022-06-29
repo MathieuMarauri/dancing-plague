@@ -1,0 +1,43 @@
+.netlogo-header {
+    display: none !important;
+}
+
+.netlogo-display-horizontal {
+    display: none !important;
+    flex-flow: row;
+}
+
+.netlogo-input {
+    background-color: transparent !important;
+}
+
+.netlogo-slider-label .netlogo-label {
+    background-color: transparent !important;
+}
+
+.netlogo-slider-label .netlogo-slider-value {
+    background-color: transparent !important;
+}
+
+.netlogo-command {
+    background-color: #BACFF3;
+    border-radius: 35px !important;
+}
+
+.netlogo-output {
+    background-color: transparent !important;
+    border: 1px solid #E7E741;
+}
+
+
+.netlogo-disabled .netlogo-forever-icon {
+    background-image: none !important;
+}
+
+.netlogo-tab-area {
+  display: none !important;
+}
+
+.netlogo-forever-button .netlogo-forever-icon {
+    background-image: none !important;
+}
